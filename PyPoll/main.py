@@ -25,14 +25,14 @@ for row in election_data[1:]:
     highest_value = 0
     totalvotes = totalvotes + 1
 
-if candidate not in candidates:
-    candidates.append(candidates)
+if candidate not in candidate_list:
+    candidate_list.append(candidate)
     votes.append(1)
 else:
-    index = candidates.index(candidate)
+    index = candidate_list.index(candidate)
     votes[index] += 1
 
-percentage_voted_list = [(votes[i] / totalvotes * 100) for i in range(len(candidates))]
+percentage_voted_list = [(votes[i] / totalvotes * 100) for i in range(len(candidate_list))]
 
 winner_index = votes.index(max(votes))
 winner = candidates[winner_index]
@@ -46,9 +46,7 @@ print("Election Results")
 print("-------------------------")
 print("Total votes: " + str(totalvotes))
 print("-------------------------")
-print(f"{candidates}: {percentage:.2f}% ({vote_count})")
-print("-------------------------")
-print(f"Winner: {winner_name}")
+print(f"{candidate}: {percentage:}% {vote_count}")
 print("-------------------------")
 print("Winner: " + winner)
 
